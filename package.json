@@ -2,8 +2,8 @@
   "name": "ReactReduxExample",
   "version": "0.1.0",
   "private": true,
-   "scripts": {
-     "prestart": "babel-node src/tools/startMessage.js",
+  "scripts": {
+    "prestart": "babel-node src/tools/startMessage.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.16.0",
+    "bootstrap": "^3.3.7",
     "jquery": "^3.1.1",
     "material-ui": "^0.16.4",
     "react": "^15.4.0",

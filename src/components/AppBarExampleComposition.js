@@ -8,6 +8,8 @@ import Toggle from 'material-ui/Toggle';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 
+import IconMenuExample from './IconMenuExample'
+
 class Login extends Component {
   static muiName = 'FlatButton';
 
@@ -18,7 +20,10 @@ class Login extends Component {
   }
 }
 
+
+
 const Logged = (props) => (
+  
   <IconMenu
     {...props}
     iconButtonElement={
@@ -26,8 +31,10 @@ const Logged = (props) => (
     }
     targetOrigin={{horizontal: 'right', vertical: 'top'}}
     anchorOrigin={{horizontal: 'right', vertical: 'top'}}
+      
   >
-    <MenuItem primaryText="Refresh" />
+    <MenuItem primaryText="Home" />
+    <MenuItem primaryText="About" />
     <MenuItem primaryText="Help" />
     <MenuItem primaryText="Sign out" />
   </IconMenu>
@@ -48,6 +55,10 @@ class AppBarExampleComposition extends Component {
     this.setState({logged: logged});
   };
 
+  
+
+
+
   render() {
     return (
       <div>
@@ -61,7 +72,7 @@ class AppBarExampleComposition extends Component {
         <AppBar
           title="Title"
           iconElementLeft={<IconButton><NavigationClose /></IconButton>}
-          iconElementRight={this.state.logged ? <Logged /> : <Login />}
+          iconElementRight={this.state.logged ? <IconMenuExample /> : <Login />}
         />
       </div>
     );
