@@ -14,8 +14,7 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
  */
 export default class IconMenuExample extends Component {
   state = {
-    valueSingle: '3',
-    valueMultiple: ['3', '5'],
+    valueSingle: '1'
   };
 
   handleChangeSingle = (event, value) => {
