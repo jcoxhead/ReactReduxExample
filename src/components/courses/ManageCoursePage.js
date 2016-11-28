@@ -17,7 +17,7 @@ export class ManageCoursePage extends React.Component {
     };
 
     this.updateCourseState = this.updateCourseState.bind(this);
-    // this.saveCourse = this.saveCourse.bind(this);
+    this.saveCourse = this.saveCourse.bind(this);
   }
 
 //   componentWillReceiveProps(nextProps) {
@@ -48,9 +48,9 @@ export class ManageCoursePage extends React.Component {
 //   }
 
 
-//   saveCourse(event) {
-//     event.preventDefault();
-
+  saveCourse(event) {
+     event.preventDefault();
+     this.props.actions.saveCourse(this.state.course);
 //     if (!this.courseFormIsValid()) {
 //       return;
 //     }
@@ -69,13 +69,14 @@ export class ManageCoursePage extends React.Component {
 //     this.setState({saving: false});
 //     toastr.success('Course saved');
 //     this.context.router.push('/courses');
-//   }
+  }
 
   render() {
     return (  
         <CourseForm
             allAuthors={this.props.authors}
             onChange={this.updateCourseState}
+            onSave={this.saveCourse}
             course={this.state.course}
             errors={this.state.errors}
         />         
@@ -93,8 +94,8 @@ export class ManageCoursePage extends React.Component {
 
 ManageCoursePage.propTypes = {
     course: PropTypes.object.isRequired,
-    authors: PropTypes.array.isRequired //,
-//   actions: PropTypes.object.isRequired
+    authors: PropTypes.array.isRequired,
+    actions: PropTypes.object.isRequired
 };
 
 // //Pull in the React Router context so router is available on this.context.router.
