@@ -28,6 +28,7 @@ export class ManageCoursePage extends React.Component {
   }
 
   updateCourseState(event) {
+    debugger;
     const field = event.target.name;
     let course = this.state.course;
     course[field] = event.target.value;
