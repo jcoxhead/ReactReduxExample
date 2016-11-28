@@ -51,6 +51,7 @@ export class ManageCoursePage extends React.Component {
   saveCourse(event) {
      event.preventDefault();
      this.props.actions.saveCourse(this.state.course);
+      this.context.router.push('/coursesPage');
 //     if (!this.courseFormIsValid()) {
 //       return;
 //     }
@@ -97,6 +98,12 @@ ManageCoursePage.propTypes = {
     authors: PropTypes.array.isRequired,
     actions: PropTypes.object.isRequired
 };
+
+//Pull in the React Router context so router is available on this.context.router.
+ManageCoursePage.contextTypes = {
+  router: PropTypes.object
+};
+
 
 // //Pull in the React Router context so router is available on this.context.router.
 // ManageCoursePage.contextTypes = {
